@@ -75,3 +75,45 @@ p, ul li {
 strong {
   color: #00d1b2;
 }
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+  }
+
+  .intro-section .photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .intro-section .bio h1 {
+    font-size: 1.8rem;
+  }
+
+  .details-card {
+    padding: 15px;
+  }
+
+  .details-card h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section .photo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .intro-section .bio h1 {
+    font-size: 1.5rem;
+  }
+
+  .details-card h2 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 0.9rem;
+  }
+}

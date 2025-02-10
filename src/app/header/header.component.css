@@ -38,4 +38,31 @@ button {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
 
+  nav {
+    display: none; /* Hide nav links by default for small screens */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .header.active nav {
+    display: flex; /* Show nav links when active */
+  }
+
+  button {
+    display: block;
+    align-self: flex-end;
+  }
+}
