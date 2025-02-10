@@ -1,0 +1,19 @@
+
+<div class="hero-section">
+  <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="MacRoy" class="animated-image">
+  <div class="introduction">
+    <h1>Hello World, I'm Mac Roy</h1>
+    <h2>A Polyvalent Developer Specializing in Artificial Intelligence and Software Development</h2>
+    <p>Transforming ideas into reality with cutting-edge technology and innovative designs.</p>
+  </div>
+  <div class="skills-cards">
+    <div class="card">
+      @for (skill of skills ; track skill){
+        <div class="card-content">
+          <h3>{{ skill.title }}</h3>
+          <p>{{ skill.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>

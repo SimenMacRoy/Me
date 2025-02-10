@@ -1,0 +1,92 @@
+
+img{
+  margin: auto;
+  position: relative;
+  top: 30px;
+  height: 300px;
+  width: 300px;
+}
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: var(--text-color);
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+
+  .introduction {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 3rem;
+      color: #00f6ff;
+      text-shadow: 0px 0px 15px #00f6ff;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #eaeaea;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+  }
+
+  .skills-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    .card {
+      background: rgba(30, 30, 47, 0.85);
+      color: #eaeaea;
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1);
+      animation: cardFadeIn 1s ease-in-out;
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #00f6ff;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #ccc;
+      }
+    }
+  }
+}
+.animated-image {
+  animation: imageEntrance 2s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
