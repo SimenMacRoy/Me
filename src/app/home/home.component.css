@@ -91,10 +91,12 @@ img{
   }
 }
 @media(max-width: 768px){
+
   img{
-    margin-top: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
     position: relative;
     top: 50px;
-    margin-bottom: 10px;
+
   }
 }
