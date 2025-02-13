@@ -17,4 +17,11 @@ export class HeaderComponent {
   toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
   }
+
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
 }

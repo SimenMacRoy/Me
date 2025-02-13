@@ -15,8 +15,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 export class ContactComponent {
 
   contactForm: FormGroup;
+  email = 'macroysimen@gmail.com'; // Your displayed email
+  apiUrl = 'http://localhost:3001/send-message'; // Update with deployed URL when live
+
   constructor(private fb: FormBuilder, private http: HttpClient) {
-    // Initialize the form with validation
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -26,18 +28,24 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Form Submitted', this.contactForm.value);
-      alert('Message sent successfully!');
-      this.contactForm.reset();
+      this.http.post(this.apiUrl, this.contactForm.value).subscribe(
+        (response) => {
+          alert('Message sent successfully!');
+          this.contactForm.reset();
+        },
+        (error) => {
+          alert('Failed to send message.');
+          console.error(error);
+        }
+      );
     }
   }
-
   downloadResume() {
     const link = document.createElement('a');
-    link.href = 'assets/your-resume.pdf';
-    link.download = 'Your_Resume.pdf';
+    link.href = 'assets/MacResume.pdf';
+    link.setAttribute('download', 'MacResume.pdf');
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   }
-
-  email = 'macroysimen@gmail.com';
 }

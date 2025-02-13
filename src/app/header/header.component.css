@@ -18,7 +18,7 @@
 }
 
 nav a {
-  margin: 0 1rem;
+  margin: 1rem 6rem;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease;
@@ -43,25 +43,40 @@ button {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-@media screen and (max-width: 768px) {
-  nav {
+@media (max-width: 768px) {
+  .hamburger {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    background: white;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
+    display: none;
+    flex-direction: column;
+    background: #16213e;
+    padding: 1rem 0;
+  }
+
+  nav.active {
+    display: flex;
   }
 
   nav a {
-    margin: 0.5rem 0;
-    text-align: left;
+    padding: 1rem;
     width: 100%;
-  }
-
-  .header.active nav {
-    display: flex; /* Show nav links when active */
-  }
-
-  button {
-    display: block;
-    align-self: flex-end;
+    margin-left: 1rem;
   }
 }

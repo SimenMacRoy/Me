@@ -103,6 +103,7 @@ strong {
   .intro-section .photo img {
     width: 80px;
     height: 80px;
+    margin-top: 5rem;
   }
 
   .intro-section .bio h1 {

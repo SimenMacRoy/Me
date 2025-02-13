@@ -1,6 +1,11 @@
 <header class="header">
   <div class="logo">My Portfolio</div>
-  <nav>
+  <div class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav [class.active]="menuOpen">
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
     <a routerLink="/about" routerLinkActive="active">About</a>
     <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>

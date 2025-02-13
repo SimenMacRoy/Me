@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Middleware
 app.use(cors());
@@ -23,13 +23,13 @@ app.post('/send-message', async (req, res) => {
     service: 'gmail', // Or any other email service (e.g., Outlook, Yahoo)
     auth: {
       user: 'macroysimen@gmail.com',
-      pass: 'djkq opub iyxg ajud', // Use environment variables for security
+      pass: 'dycz crhl qzyj lvkf', // Use environment variables for security
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"${name}" <${email}>`,
+      from: email,
       to: 'macroysimen@gmail.com', // Your receiving email
       subject: 'New Contact Form Message',
       text: message,
