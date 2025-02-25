@@ -36,6 +36,20 @@ export class PortfolioComponent {
       githubLink: 'https://github.com/SimenMacRoy/Jambo'
     },
     {
+      title: 'Polaris',
+      description: 'Une machine intelligente qui assistera les clients dans un supermarché en les aidant à trouver les produits qu’ils recherchent rapidement',
+      techStack: 'Python',
+      image: 'https://gardenastronomer.com/wp-content/uploads/2021/06/north-star-banner.jpg?w=1200',
+      githubLink: 'https://github.com/SimenMacRoy/Polaris'
+    },
+    {
+      title: 'Traffic Control',
+      description: 'Implémentation d\'un système qui permettra de suivre les vols en temps réel, d\'afficher les itinéraires des avions sur une carte interactive, de gérer les horaires et les routes des avions',
+      techStack: 'C++, C#',
+      image: 'https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/image/aeronautical_service.jpg',
+      githubLink: 'https://github.com/SimenMacRoy/TrafficControl'
+    },
+    {
       title: 'Json Hack',
       description: 'This mini-application is designed to serialize instances of a class into a JSON file. These objects can have properties of simple types, objects, or collections. The second part of the application is used to deserialize a JSON file, meaning that, starting from a JSON file, an instance of a class can be recreated',
       techStack: 'Java',
