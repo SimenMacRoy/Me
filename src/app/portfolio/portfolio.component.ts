@@ -10,6 +10,7 @@ interface Project {
   githubLink: string;
   type: 'professional' | 'personal';
   featured?: boolean;
+  private?: boolean;
 }
 
 @Component({
@@ -47,6 +48,8 @@ export class PortfolioComponent {
       viewGH:      fr ? 'Voir sur GitHub'     : 'View on GitHub',
       ctaText:     fr ? 'Vous voulez voir plus ? Tout mon code est sur GitHub.' : 'Want to see more? All my code lives on GitHub.',
       ctaBtn:      fr ? 'Tout voir sur GitHub' : 'View All on GitHub',
+      privateTag:  fr ? '🔒 Confidentiel' : '🔒 Private',
+      privateMsg:  fr ? 'NDA signé, café bu 😏' : 'NDA signed, coffee consumed 😏',
     };
   }
 
@@ -63,6 +66,7 @@ export class PortfolioComponent {
       githubLink: 'https://github.com/SimenMacRoy',
       type: 'professional',
       featured: true,
+      private: true,
     },
     {
       title: 'Safesguard — GRC SaaS Platform',
@@ -76,6 +80,7 @@ export class PortfolioComponent {
       githubLink: 'https://github.com/SimenMacRoy',
       type: 'professional',
       featured: true,
+      private: true,
     },
     {
       title: "Shek's House — E-commerce Platform",
@@ -89,6 +94,7 @@ export class PortfolioComponent {
       githubLink: 'https://github.com/SimenMacRoy',
       type: 'professional',
       featured: true,
+      private: true,
     },
     {
       title: 'BluM — Recipe & Meal App',
@@ -138,6 +144,7 @@ export class PortfolioComponent {
       icon: '🌍',
       githubLink: 'https://github.com/SimenMacRoy',
       type: 'personal',
+      private: true,
     },
     {
       title: 'Polaris',

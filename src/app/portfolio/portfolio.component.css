@@ -243,6 +243,26 @@
   font-size: 1rem;
 }
 
+/* ─── Private badge ──────────────────────────────────────── */
+.proj-private {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.private-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--space-gold);
+  letter-spacing: 0.04em;
+}
+
+.private-msg {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* ─── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
