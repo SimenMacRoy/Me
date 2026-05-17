@@ -1,15 +1,45 @@
-<header class="header">
-  <div class="logo">My Portfolio</div>
-  <div class="hamburger" (click)="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+<header class="header" [class.scrolled]="scrolled">
+  <div class="header-inner">
+
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <span class="logo-star">✦</span>
+      <span class="logo-text">MAC ROY</span>
+    </a>
+
+    <nav class="nav" [class.open]="menuOpen">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">
+        {{ langSvc.lang() === 'en' ? 'Home' : 'Accueil' }}
+      </a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">
+        {{ langSvc.lang() === 'en' ? 'About' : 'À Propos' }}
+      </a>
+      <a routerLink="/portfolio" routerLinkActive="active" (click)="closeMenu()">
+        {{ langSvc.lang() === 'en' ? 'Projects' : 'Projets' }}
+      </a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+        {{ langSvc.lang() === 'en' ? 'Contact' : 'Contact' }}
+      </a>
+      <a routerLink="/contact" class="nav-cta" (click)="closeMenu()">
+        {{ langSvc.lang() === 'en' ? 'Hire Me' : 'Embauchez-moi' }}
+      </a>
+    </nav>
+
+    <div class="header-right">
+      <button class="lang-btn" (click)="langSvc.toggle()" [attr.aria-label]="'Switch to ' + (langSvc.lang() === 'en' ? 'French' : 'English')">
+        <span class="lang-flag">{{ langSvc.lang() === 'en' ? '🇫🇷' : '🇬🇧' }}</span>
+        <span class="lang-code">{{ langSvc.lang() === 'en' ? 'FR' : 'EN' }}</span>
+      </button>
+
+      <button class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
   </div>
-  <nav [class.active]="menuOpen">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
-    <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
-  </nav>
-  <button (click)="toggleDarkMode()">Toggle Dark Mode</button>
 </header>
+
+@if (menuOpen) {
+  <div class="nav-backdrop" (click)="closeMenu()"></div>
+}

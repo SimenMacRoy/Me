@@ -1,104 +1,164 @@
-<div class="about-page">
-  <div class="intro-section">
-    <div class="photo">
-      <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Mac Roy" />
+<div class="about-page page-container">
+
+  <!-- ═══ PAGE HEADER ════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="section-label">{{ ui.whoLabel }}</span>
+    <h1 class="section-title">{{ ui.aboutTitle1 }} <span>{{ ui.aboutTitle2 }}</span></h1>
+    <div class="section-divider"></div>
+    <p class="section-desc">{{ ui.bioDesc }}</p>
+  </div>
+
+  <!-- ═══ STATS ═══════════════════════════════════════════════ -->
+  <div class="stats-row">
+    <div class="stat-card glass-card">
+      <span class="stat-num gradient-text">1+</span>
+      <span class="stat-lbl">{{ ui.stat1Lbl }}</span>
     </div>
-    <div class="bio">
-      <h1>About Me</h1>
-      <p>
-        I am a skilled programmer with proficiency in
-        multiple programming languages, excelling in
-        solving complex problems. With my three years
-        witnessing my passion for programming and
-        problem solving I work hard in every projects I
-        embark on. Creative and collaborative, I
-        seamlessly integrate into teams to achieve
-        shared goals. My commitment to delivering highquality work is reflected in my dedication to
-        every project. Always ready to give my best to
-        ensure success—and yes, I do all of this without
-        even needing coffee (well, almost)!
-
-      </p>
+    <div class="stat-card glass-card">
+      <span class="stat-num gold-text">#1 &amp; #2</span>
+      <span class="stat-lbl">{{ ui.stat2Lbl }}</span>
     </div>
-  </div>
-
-  <div class="details-card">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Software Development:</strong> Java, C#, C++, UML, HTML5, CSS, PHP, JavaScript, Node.JS, React, React Native, Angular, TypeScript, Scrum</li>
-      <li><strong>Data Science & AI:</strong> Python, NumPy, Matplotlib, Pandas, Scikit-learn</li>
-      <li><strong>Database Management:</strong> SQL, MySQL, Oracle, PostgreSQL</li>
-      <li><strong>Scientific Calculations:</strong> MATLAB</li>
-      <li><strong>IDE and Version Control:</strong> IntelliJ, Visual Studio Code, Microsoft Visual, GitHub</li>
-    </ul>
-  </div>
-
-  <div class="details-card">
-    <h2>Soft Skills</h2>
-    <ul>
-      <li>Team Work</li>
-      <li>Proactive Research and Continuous Innovation</li>
-      <li>Strategic Planning of Tasks to Accomplish</li>
-      <li>Analytical and Modeling Mindset</li>
-      <li>Proficiency in Using Specialized IT Software</li>
-      <li>Adaptability in the Workplace</li>
-      <li>Leadership in the Work Environment</li>
-    </ul>
-  </div>
-
-  <div class="details-card">
-    <h2>Hobbies</h2>
-    <ul>
-      <li>Reading</li>
-      <li>Passion for Music and Dance</li>
-      <li>Puzzles and Games of Logic</li>
-      <li>Passion for Cooking</li>
-    </ul>
-  </div>
-
-  <div class="details-card">
-    <h2>Experience</h2>
-    <div>
-      <h3>Customer Service - Village Value</h3>
-      <p><strong>03/2023 - Present</strong> | Trois-Rivières, Quebec</p>
-      <ul>
-        <li>Training new employees on sales techniques, customer service, and internal store procedures.</li>
-        <li>Assisting customers with inquiries, resolving complaints, and ensuring a positive shopping experience.</li>
-      </ul>
+    <div class="stat-card glass-card">
+      <span class="stat-num gradient-text">10+</span>
+      <span class="stat-lbl">{{ ui.stat3Lbl }}</span>
     </div>
-    <div>
-      <h3>Tutor - PDV Leadex Corporation</h3>
-      <p><strong>09/2021 - 09/2022</strong> | Yaounde, Centre</p>
-      <ul>
-        <li>Attending educational meetings with parents to present tutoring progress reports and provide advice on home follow-up.</li>
-      </ul>
+    <div class="stat-card glass-card">
+      <span class="stat-num gradient-text">4.15</span>
+      <span class="stat-lbl">{{ ui.stat4Lbl }}</span>
     </div>
   </div>
 
-  <div class="details-card">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>University of Quebec at Trois-Rivieres</strong> | Trois-Rivières, Quebec | 01/2023 – 05/2026 <br> Bachelor's Degree in Computer Science: Software Development - Excellent</li>
-      <li><strong>Coursera</strong> | Trois-Rivières, Quebec | 12/2023 - 04/2024 <br> Certificate: Web and Mobile Applications Development – Very Good</li>
-      <li><strong>National Advanced School Polytechnic Yaounde</strong> | Yaounde, Cameroon | 09/2021 - 09/2022 <br> Bachelor's Degree: Mathematics and Physics – Good</li>
-    </ul>
+  <!-- ═══ BIO ══════════════════════════════════════════════════ -->
+  <div class="bio-section">
+    <div class="bio-visual">
+      <div class="photo-orbit">
+        <div class="orbit-track"><div class="orbit-dot"></div></div>
+        <div class="orbit-track t2"><div class="orbit-dot d2"></div></div>
+        <div class="photo-frame">
+          <img src="image.png" alt="Mac Roy Simen" class="bio-photo">
+        </div>
+      </div>
+    </div>
+    <div class="bio-text">
+      <h2 [innerHTML]="ui.bioH2"></h2>
+      <p>{{ ui.bio1 }}</p>
+      <p>{{ ui.bio2 }}</p>
+      <p>{{ ui.bio3 }}</p>
+      <div class="bio-chips">
+        @for (c of ui.chips; track c) { <span class="tag">{{ c }}</span> }
+      </div>
+    </div>
   </div>
 
-  <div class="details-card">
-    <h2>Certifications</h2>
-    <ul>
-      <li>2024 - Meta (Coursera): Principles of UX/UI Design, React Basics, React Native, Introduction to Mobile Development</li>
-      <li>2024 - 1st in Canada at the International Astronomy and Astrophysics Competition</li>
-      <li>2024 - Artificial Intelligence Certificate (EdX)</li>
-    </ul>
-  </div>
+  <!-- ═══ SKILLS ═══════════════════════════════════════════════ -->
+  <section class="section-block">
+    <div class="section-header" style="text-align:left; margin-bottom:2rem">
+      <span class="section-label">{{ ui.skillsLabel }}</span>
+      <h2 class="section-title">{{ ui.skillsTitle1 }} <span>{{ ui.skillsTitle2 }}</span></h2>
+      <div class="section-divider" style="margin:0"></div>
+    </div>
+    <div class="skills-grid">
+      @for (sk of skills; track sk.name) {
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">{{ sk.name }}</span>
+            <span class="skill-pct">{{ sk.level }}%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" [style.--lvl]="sk.level+'%'"
+                 [style.background]="'linear-gradient(90deg,'+sk.color+','+sk.color+'55)'"></div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="tools-block">
+      <p class="tools-label">{{ ui.toolsLbl }}</p>
+      <div class="tools-wrap">
+        @for (t of tools; track t) { <span class="tag">{{ t }}</span> }
+      </div>
+    </div>
+  </section>
 
-  <div class="details-card">
-    <h2>Languages</h2>
-    <ul>
-      <li><strong>French:</strong> Native</li>
-      <li><strong>English:</strong> Fluent</li>
-      <li><strong>Spanish:</strong> Conversational</li>
-    </ul>
-  </div>
+  <!-- ═══ EXPERIENCE ════════════════════════════════════════════ -->
+  <section class="section-block">
+    <div class="section-header" style="text-align:left; margin-bottom:2rem">
+      <span class="section-label">{{ ui.expLabel }}</span>
+      <h2 class="section-title">{{ ui.expTitle }}</h2>
+      <div class="section-divider" style="margin:0"></div>
+    </div>
+    @for (exp of experience; track exp.company) {
+      <div class="timeline-item">
+        <div class="tl-icon">{{ exp.icon }}</div>
+        <div class="tl-card glass-card">
+          <span class="tl-period">{{ exp.period }}  ·  {{ exp.location }}</span>
+          <h3 class="tl-title">{{ langSvc.t(exp.role) }} — {{ exp.company }}</h3>
+          <p class="tl-project">{{ langSvc.t(exp.project) }}</p>
+          <ul class="tl-bullets">
+            @for (b of langSvc.t(exp.bullets); track b) { <li>{{ b }}</li> }
+          </ul>
+          <div class="tl-tech">
+            @for (t of exp.tech; track t) { <span class="tech-tag">{{ t }}</span> }
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+
+  <!-- ═══ EDUCATION ════════════════════════════════════════════ -->
+  <section class="section-block">
+    <div class="section-header" style="text-align:left; margin-bottom:2rem">
+      <span class="section-label">{{ ui.eduLabel }}</span>
+      <h2 class="section-title">{{ ui.eduTitle }}</h2>
+      <div class="section-divider" style="margin:0"></div>
+    </div>
+    @for (edu of education; track edu.school) {
+      <div class="timeline-item">
+        <div class="tl-icon">{{ edu.icon }}</div>
+        <div class="tl-card glass-card">
+          <span class="tl-period">{{ edu.period }}  ·  {{ edu.location }}</span>
+          <h3 class="tl-title">{{ langSvc.t(edu.degree) }}</h3>
+          <p class="tl-place">{{ edu.school }}</p>
+          <span class="tl-badge">{{ langSvc.t(edu.note) }}</span>
+        </div>
+      </div>
+    }
+  </section>
+
+  <!-- ═══ CERTIFICATIONS ═══════════════════════════════════════ -->
+  <section class="section-block">
+    <div class="section-header">
+      <span class="section-label">{{ ui.certsLabel }}</span>
+      <h2 class="section-title"><span>{{ ui.certsTitle1 }}</span> {{ ui.certsTitle2 }}</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="certs-grid">
+      @for (cert of certifications; track cert.title.en) {
+        <div class="cert-card glass-card" [class.cert-highlight]="cert.highlight">
+          <span class="cert-icon">{{ cert.icon }}</span>
+          <div class="cert-year">{{ cert.year }}</div>
+          <p class="cert-title">{{ langSvc.t(cert.title) }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ═══ LANGUAGES ════════════════════════════════════════════ -->
+  <section class="section-block">
+    <div class="section-header">
+      <span class="section-label">{{ ui.langsLabel }}</span>
+      <h2 class="section-title">{{ ui.langsTitle1 }} <span>{{ ui.langsTitle2 }}</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="lang-grid">
+      @for (lg of languages; track lg.name) {
+        <div class="lang-card glass-card" [style.--target-width]="lg.pct+'%'">
+          <div class="lang-name">{{ lg.name }}</div>
+          <div class="lang-level">{{ langSvc.t(lg.level) }}</div>
+          <div class="lang-track"><div class="lang-fill"></div></div>
+          <span class="lang-pct">{{ lg.pct }}%</span>
+        </div>
+      }
+    </div>
+  </section>
+
 </div>
